@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { jsPDF } from 'jspdf';
-import * as XLSX from 'xlsx';
+import XLSX from 'xlsx';
 import '../styles/style.css'
 
 const RentalForm = () => {
@@ -56,47 +56,10 @@ const RentalForm = () => {
   };
 
   const updateExcelSheet = (data) => {
-    // Load existing workbook if it exists
-    let workbook;
-    try {
-      workbook = XLSX.readFile('Boat_Rental_Receipts.xlsx');
-    } catch (error) {
-      // If the file doesn't exist yet, create a new workbook
-      workbook = XLSX.utils.book_new();
-    }
-  
-    // Extract existing data from the workbook or create a new array
-    const existingData = workbook.Sheets['Receipts']
-      ? XLSX.utils.sheet_to_json(workbook.Sheets['Receipts'])
-      : [];
-  
-    // Add new rental data to the existing data array
-    existingData.push({
-      FullName: data.fullName,
-      StreetAddress: data.streetAddress,
-      City: data.city,
-      PostalCode: data.postalCode,
-      Phone: data.phone,
-      Email: data.email,
-      OrderDate: data.orderDate,
-      RentalDate: data.rentalDate,
-      StartTime: data.startTime,
-      EndTime: data.endTime,
-      BoatType1: data.boatType1,
-      BoatType2: data.boatType2,
-      Hours: data.hours,
-      AmountPaid: data.amountPaid,
-      BalanceDue: data.balanceDue,
-    });
-  
-    // Convert the combined data to a worksheet
-    const worksheet = XLSX.utils.json_to_sheet(existingData);
-  
-    // Add or update the 'Receipts' sheet in the workbook
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Receipts');
-  
-    // Write the modified workbook back to the file
-    XLSX.writeFile(workbook, 'Boat_Rental_Receipts.xlsx');
+    const wb = XLSX.utils.book_new();
+    const ws = XLSX.utils.json_to_sheet([data]);
+    XLSX.utils.book_append_sheet(wb, ws, 'RentalData');
+    XLSX.writeFile(wb, 'Rentals.xlsx');
   };
   
 
