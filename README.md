@@ -6,14 +6,14 @@ Boat Rental System
 - Node.js
 - MongoDB
 
-## Installation
-- cd Backend
-- npm install
-- npm start
+## Installation for backend server
+``` npm install```
+```npm eun dev```
 
-- cd frontend 
-- npm install
-- npm start
+## Installation for frontend server 
+``` cd frontend / client```
+``` npm install ```
+``` npm start ```
 
 ## Running the Project
 - Make sure MongoDB is running.
