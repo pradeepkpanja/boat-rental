@@ -28,6 +28,11 @@ Boat Rental System
 
 - I work at the Toronto Harbour Nautical Centre, formerly known as Harbourfront Centre Sailing and Powerboating. Our team encountered an issue with our invoice system for booking and reservations. Previously, we had to manually enter the same data into an Excel sheet and the payment invoice, which was redundant and inefficient.
 
+HOME PAGE
+
+![image](https://github.com/pradeepkpanja/boat-rental/assets/57542907/93c6552e-611a-416e-8586-19381fd29ae1)
+
+
 - To address this, I applied my technical skills to develop a website that streamlines our rental system. The website directly updates the data in a MongoDB database, generates a PDF invoice with our company logo, and appends the information to an Excel sheet automatically. While the system is functional, I'm still working on a few fixes and improvements.
 
 - I would appreciate any feedback and am interested in collaborating with anyone who would like to help make this system even better.
