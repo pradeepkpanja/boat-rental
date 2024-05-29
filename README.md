@@ -8,7 +8,7 @@ Boat Rental System
 
 ## Installation for backend server
 ``` npm install```
-```npm eun dev```
+```npm run dev```
 
 ## Installation for frontend server 
 ``` cd frontend / client```
